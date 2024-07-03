@@ -22,14 +22,14 @@ body {
 }
 
 #button-container {
-  display: flex; 
-  flex-wrap: wrap; /* Izinkan tombol untuk pindah baris jika tidak muat */
-  justify-content: center; 
-  gap: 20px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 #button-container button {
-  padding: 15px 30px;
+  padding: 0px 9px;
   background-color: #efe0e0; 
   color: #000;
   border: 3px solid #333; 
@@ -42,6 +42,10 @@ body {
   height: 150px;
   text-align: center; /* Pusatkan teks di dalam tombol */
   line-height: 150px; /* Atur tinggi baris teks agar sejajar dengan tinggi tombol */
+  display: flex; /* Gunakan flexbox untuk mengatur posisi teks */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #button-container button:hover {
@@ -123,13 +127,14 @@ body {
 
   @media (max-width: 768px) {
     #button-container {
-      gap: 10px; /* Kurangi jarak antar tombol pada layar kecil */
+      flex-direction: column; /* Ubah menjadi vertikal di layar kecil */
+      align-items: center; /* Pusatkan tombol secara horizontal */
+      gap: 10px; 
     }
   
     #button-container button {
-      width: 120px; /* Perkecil ukuran tombol pada layar kecil */
+      width: 120px; 
       height: 120px;
-      line-height: 120px; /* Sesuaikan tinggi baris teks */
     }
   }
   
