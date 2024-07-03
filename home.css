@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('bg/bg3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Warna latar belakang */
+  }
+  
+  #home-container {
+    text-align: center;
+  }
+  
+  #logo {
+    width: 400px; /* Sesuaikan ukuran logo */
+    margin-bottom: 50px;
+  }
+  
+  #start-button {
+    animation: pulse 2s infinite;
+    padding: 15px 30px;
+    background-color:#efe0e0; /* Ganti dengan path gambar tekstur Anda */
+    background-size: cover;
+    color: #000;
+    border: 3px solid #333; /* Garis tepi */
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: "Pixelify Sans", sans-serif;
+    transition: filter 2.2s ease; /* Transisi untuk efek hover */
+    position: relative; /* Untuk memposisikan elemen pseudo */
+    overflow: hidden;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Bentuk diamond */
+    width: 28%; /* Sesuaikan lebar agar terlihat proporsional */
+    height: 150px;
+    right: 0%;
+    bottom: 0px;
+  }
+
+  #start-button:hover{
+    bottom: 5px;
+    background-color: #913131;
+    color: #ffff;
+    animation: pulse 2s;
+  }
+
+  #start-button.clicked::before { /* Efek splash saat tombol diklik */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* Warna splash (putih transparan) */
+    animation: splash 0.5s ease-out forwards; /* Animasi splash */
+    z-index: -1; /* Pastikan splash berada di bawah teks tombol */
+  }
+  
+  @keyframes splash {
+    to {
+      width: 200%; /* Ukuran akhir splash */
+      height: 200%;
+      opacity: 0; /* Menghilang secara perlahan */
+    }
+  }
+
+  #mute-button {
+    position: absolute; /* Posisikan tombol secara absolut */
+    bottom: 20px; /* Jarak dari bawah */
+    left: 20px; /* Jarak dari kiri */
+    padding: 15px 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'IM Fell DW Pica', serif;
+  }
+
+  #volume-slider {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Posisi slider volume di pojok kanan bawah */
+    width: 150px; /* Sesuaikan lebar slider */
+  }
+  
+  
+  
+  
