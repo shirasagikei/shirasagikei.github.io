@@ -1,21 +1,54 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('bg/bg3.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover; /* Warna latar belakang */
-  }
-  
-  #home-container {
-    text-align: center;
-  }
-  
-  #logo {
-    width: 400px; /* Sesuaikan ukuran logo */
-    margin-bottom: 50px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background: url('bg/bg3.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+#home-container {
+  text-align: center;
+  display: flex; /* Gunakan flexbox untuk mengatur container */
+  flex-direction: column; /* Susun elemen secara vertikal */
+  align-items: center; /* Pusatkan item secara horizontal */
+}
+
+#logo {
+  width: 400px; 
+  margin-bottom: 50px;
+}
+
+#button-container {
+  display: flex; 
+  flex-wrap: wrap; /* Izinkan tombol untuk pindah baris jika tidak muat */
+  justify-content: center; 
+  gap: 20px; 
+}
+
+#button-container button {
+  padding: 15px 30px;
+  background-color: #efe0e0; 
+  color: #000;
+  border: 3px solid #333; 
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Pixelify Sans", sans-serif;
+  transition: all 0.3s ease; 
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Bentuk belah ketupat */
+  width: 150px; /* Sesuaikan ukuran tombol */
+  height: 150px;
+  text-align: center; /* Pusatkan teks di dalam tombol */
+  line-height: 150px; /* Atur tinggi baris teks agar sejajar dengan tinggi tombol */
+}
+
+#button-container button:hover {
+  background-color: #913131; 
+  color: #ffff;
+  transform: scale(1.1); 
+}
   
   #start-button {
     animation: pulse 2s infinite;
@@ -86,6 +119,18 @@ body {
     bottom: 20px;
     right: 20px; /* Posisi slider volume di pojok kanan bawah */
     width: 150px; /* Sesuaikan lebar slider */
+  }
+
+  @media (max-width: 768px) {
+    #button-container {
+      gap: 10px; /* Kurangi jarak antar tombol pada layar kecil */
+    }
+  
+    #button-container button {
+      width: 120px; /* Perkecil ukuran tombol pada layar kecil */
+      height: 120px;
+      line-height: 120px; /* Sesuaikan tinggi baris teks */
+    }
   }
   
   
